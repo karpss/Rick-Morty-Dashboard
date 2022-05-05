@@ -1,12 +1,25 @@
 /* eslint-disable */
 import React, {useState} from 'react';
 import { CharacterDetailsProps } from '../types';
+import CharacterChapters from '../Chapters/CharacterChapters';
 
 const CharacterDetails: React.FC <CharacterDetailsProps> = (props) => {
 
+  const [openChapters, setOpenChapters] = useState <boolean>(false);
+
+  const toggleChapterPage = () => {
+
+    setOpenChapters((prev) => !prev);
+
+  }
+
     const { image, origin, location, name, episode, species, gender } =  props;
 
-
+    const episodes = episode.reduce((current, next) => {
+    const newCurrent = [...current];
+    newCurrent.push(next.data);
+    return newCurrent;
+  }, []);
 
 
 
@@ -79,13 +92,16 @@ const CharacterDetails: React.FC <CharacterDetailsProps> = (props) => {
                 <p>
                   {name} appeared in <span>{episode.length}</span> chapters
                 </p>
-                <button className='characterInfo--text' >
+                <button onClick={toggleChapterPage}>
                   View Chapter Names
                 </button>
               </div>
             </div>
           </div>
         </div>
+        {openChapters && (
+        <CharacterChapters episodes={episodes} closePage={toggleChapterPage} />
+      )}
       </div>
       
     

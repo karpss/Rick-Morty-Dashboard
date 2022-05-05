@@ -9,6 +9,11 @@ export interface CharacterDetailsProps{
      episode: Array<any>;
 }
 
+export interface CharacterChapterProps {
+  episodes: Array<EpisodeProps>;
+  closePage: (e: any) => void;
+}
+
 export enum Gender {
     MALE = "Male",
     FEMALE = "Female",
