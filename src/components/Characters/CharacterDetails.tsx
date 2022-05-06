@@ -11,7 +11,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = (props) => {
 
   const {image, origin, location, name, episode, species, gender} = props;
 
-  const episodes = episode.reduce((current, next) => {
+  const episodes = episode?.reduce((current, next) => {
     const newCurrent = [...current];
     newCurrent.push(next.data);
     return newCurrent;
@@ -19,7 +19,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = (props) => {
 
   return (
     <div className="characterBox">
-      <img className="characterImage" src={image} alt="character" />
+      <img className="characterImage" src={image} alt="Character" />
       <div className="characterContent">
         <div className="characterTop">
           <h3 className="characterBoxName">Name: {name}</h3>
@@ -39,18 +39,18 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = (props) => {
         <div className="characterBlock">
           <div className="characterInfo">
             <p className="characterInfo--title">NAME</p>
-            <p className="characterInfo--text">{origin.name}</p>
+            <p className="characterInfo--text">{origin?.name}</p>
           </div>
           <div className="characterInfo">
             <p className="characterInfo--title">DIMENSION</p>
             <p className="characterInfo--text">
-              {origin.dimension ? origin.dimension : 'unknown'}
+              {origin?.dimension ? origin.dimension : 'unknown'}
             </p>
           </div>
           <div className="characterInfo">
             <p className="characterInfo--title">RESIDENTS</p>
             <p className="characterInfo--text">
-              {origin.residents ? origin.residents.length : 0}
+              {origin?.residents ? origin?.residents.length : 0}
             </p>
           </div>
         </div>
@@ -59,18 +59,18 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = (props) => {
         <div className="characterBlock">
           <div className="characterInfo">
             <p className="characterInfo--title">NAME</p>
-            <p className="characterInfo--text">{location.name}</p>
+            <p className="characterInfo--text">{location?.name}</p>
           </div>
           <div className="characterInfo">
             <p className="characterInfo--title">DIMENSION</p>
             <p className="characterInfo--text">
-              {location.dimension ? location.dimension : 'unknown'}
+              {location?.dimension ? location?.dimension : 'unknown'}
             </p>
           </div>
           <div className="characterInfo">
             <p className="characterInfo--title">RESIDENTS</p>
             <p className="characterInfo--text">
-              {location.residents ? location.residents.length : 0}
+              {location?.residents ? location?.residents.length : 0}
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = (props) => {
             <p className="characterInfo--title">CHAPTERS</p>
             <div className="characterInfo--text">
               <p>
-                {name} appeared in <span>{episode.length}</span> chapters
+                {name} appeared in <span>{episode?.length}</span> chapters
               </p>
               <button type="button" onClick={toggleChapterPage}>
                 View Chapter Names

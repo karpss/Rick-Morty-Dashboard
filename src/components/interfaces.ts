@@ -1,11 +1,12 @@
+/* eslint-disable */
 export interface CharacterDetailsProps {
   name: string;
   species: string;
   image: string;
-  origin: LocationOriginObject;
-  location: LocationOriginObject;
+  origin?: LocationOriginObject;
+  location?: LocationOriginObject;
   gender: string;
-  episode: Array<any>;
+  episode?: Array<any>;
 }
 
 export interface CharacterChapterProps {
