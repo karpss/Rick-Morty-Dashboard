@@ -130,6 +130,14 @@ body {
   font-size: 2rem;
 }
 
+.loadingGif{
+   padding: 20%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 @media (max-width: 768px) { 
   .characterBox {
     flex-direction: column;
