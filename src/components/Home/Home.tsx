@@ -27,7 +27,7 @@ const Home: React.FC = () => {
     }
     return <LoadingScreen />;
   };
-  console.log(characterDetails);
+  //console.log(characterDetails);
 
   return (
     <main>

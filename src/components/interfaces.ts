@@ -1,4 +1,3 @@
-/* eslint-disable */
 export interface CharacterDetailsProps {
   name: string;
   species: string;

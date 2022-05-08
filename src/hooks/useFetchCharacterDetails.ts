@@ -56,15 +56,16 @@ const useFetchCharacterDetails = (): any => {
         setCharacterDetails(newResults);
       }
     } catch (err: any) {
-      setErrors(err);
+      setErrors(err)
     }
   }, []);
+  
 
   useEffect(() => {
     fetchCharacterInfo();
   }, [fetchCharacterInfo]);
 
-  return {characterDetails, errors};
+  return {characterDetails};
 };
 
 export default useFetchCharacterDetails;
