@@ -24,7 +24,7 @@ interface LocationOriginObject {
   url: string;
   created: string | null;
   dimension: string | null;
-  id: string | null;
+  id: number | null;
   residents: string[] | null;
   type: string | null;
 }

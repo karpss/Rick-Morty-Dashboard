@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import useFetchCharacterDetails from '../../hooks/useFetchCharacterDetails';
 import CharacterDetails from '../Characters/CharacterDetails';
@@ -26,6 +27,7 @@ const Home: React.FC = () => {
     }
     return <LoadingScreen />;
   };
+  console.log(characterDetails);
 
   return (
     <main>
