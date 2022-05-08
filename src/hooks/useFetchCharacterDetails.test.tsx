@@ -1,10 +1,9 @@
 /* eslint-disable */
 import axios,{AxiosResponse} from "axios";
-import useFetchCharacterDetails from "./useFetchCharacterDetails";
+import fetchCharacterInfo from "./useFetchCharacterDetails";
 import { CharacterResponse, Gender } from "../components/interfaces";
 
-
-
+jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe('useFetchCharacterDetails', () => {
@@ -89,7 +88,7 @@ describe('useFetchCharacterDetails', () => {
      mockedAxios.get.mockResolvedValueOnce(mockedResponse);
      
     expect(axios.get).not.toHaveBeenCalled();
-    const data = await useFetchCharacterDetails();
+    const data = await fetchCharacterInfo();
     expect(axios.get).toHaveBeenCalled();
     expect(data).toEqual(character);
   });

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
 import {
@@ -8,9 +9,7 @@ import {
 const characterUrl = 'https://rickandmortyapi.com/api/character';
 
 const useFetchCharacterDetails = (): any => {
-  const [characterDetails, setCharacterDetails] = useState<
-    Array<CharacterResponse>
-  >([]);
+  const [characterDetails, setCharacterDetails] = useState<Array<CharacterResponse>>([]);
   const [errors, setErrors] = useState(null);
 
   const fetchCharacterInfo = useCallback(async () => {
